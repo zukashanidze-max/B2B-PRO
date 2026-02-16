@@ -26,7 +26,7 @@ def get_gemini_response(prompt, content=""):
         api_key = st.secrets["GOOGLE_API_KEY"]
         genai.configure(api_key=api_key)
         
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-2.5-pro')
         full_prompt = f"{prompt}\n\nმონაცემები:\n{content}"
         response = model.generate_content(full_prompt)
         return response.text
